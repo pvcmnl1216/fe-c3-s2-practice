@@ -1,0 +1,25 @@
+
+<div id="Body">
+   
+    <h3>Trending Movies</h3>
+<div class="search-box">
+    <input type="text" placeholder="Search Movies" [(ngModel)]="searchText" />
+    <button (click)="search()" type="button">Go</button>
+    <button (click)="reset()" type="button">Clear</button>
+</div>
+
+<div  class="card" *ngFor="let movie of moviesdata">
+    <img src="../../assets/movies/{{movie.movieTitle}}.jpg" alt="">
+    
+    <div class="card-content">
+        <span style="width: 50px; height: 5px; display: flex;"><img src="../../assets/movies/rating.jpg" alt="" id="ttt">{{movie.rating}}</span>
+        <div>   
+        <h4 style="text-transform:uppercase">{{movie.movieTitle}}</h4>
+        <div id="cls">
+        <span >{{movie.genre}} </span>
+        <span id="cl"> {{movie?.yearOfRelease}}</span> 
+    </div>
+        </div>
+     </div>
+</div>
+</div>
